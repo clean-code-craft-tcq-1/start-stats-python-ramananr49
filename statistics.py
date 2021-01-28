@@ -7,7 +7,7 @@ def calculateStats(numbers):
     Min_number = min(numbers)
     avg_number = sum(numbers)/len(numbers)
     
-  return {"avg": avg_number, "min": Min_number, "Max" : Max_number}
+  return {"avg": avg_number, "min": Min_number, "max" : Max_number}
 
 class EmailAlert:
   def _init_ (self):
@@ -25,9 +25,14 @@ class LEDAlert:
     self.ledGlows = Ture
     
 class StatsAlerter:
+  def _init_(self, max_threshold, stats_alerters):
+    self.max_threshold = max_threshold
+    self.stats_alerters = stats_alerters
+    
   def checkAndAlert(self, values):
     for value in values:
-      for alerter in self.stats_alerters:
-        alerter.alert()
+      if value >= self.max_threshold:
+        for alerter in self.stats_alerters:
+          alerter.alert()
           
 
