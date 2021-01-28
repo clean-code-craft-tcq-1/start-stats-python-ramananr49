@@ -25,14 +25,11 @@ class LEDAlert:
     self.ledGlows = Ture
     
 class StatsAlerter:
-  def _init_(self, max_threshold, stats_alerters):
-    self.max_threshold = max_threshold
-    self.stats_alerters = stats_alerters
+  def _init_(self):
     
   def checkAndAlert(self, values):
     for value in values:
-      if value >= self.max_threshold:
-        for alerter in self.stats_alerters:
-          alerter.alert()
+      for alerter in self.stats_alerters:
+        alerter.alert()
           
 
