@@ -20,7 +20,7 @@ class StatsTest(unittest.TestCase):
     # Use nan and isnan in https://docs.python.org/3/library/math.html
     self.assertTrue(math.isnan(computedStats["avg"]))
     self.assertTrue(math.isnan(computedStats["min"]))
-    self.assertTrue(math.isnan(computedStats["max"]))
+    self.assertTrue(math.isnan(computedStats["Max"]))
 
   def test_raise_alerts_when_max_above_threshold(self):
     emailAlert = EmailAlert()
