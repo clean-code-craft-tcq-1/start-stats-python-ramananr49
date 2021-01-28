@@ -20,15 +20,15 @@ class StatsAlerter:
         for alerter in self.stats_alerters:
           alerter.alert()
           
- class EmailAlert:
+class EmailAlert:
   def _init_ (self):
     self.emailSent = False
     
-   def alert(self):
+  def alert(self):
     self.emailSent = True
     
     
- class LEDAlert:
+class LEDAlert:
   def _init_ (self):
     self.ledGlows = False
     
