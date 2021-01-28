@@ -25,8 +25,6 @@ class LEDAlert:
     self.ledGlows = Ture
     
 class StatsAlerter:
-  def _init_(self):
-    
   def checkAndAlert(self, values):
     for value in values:
       for alerter in self.stats_alerters:
